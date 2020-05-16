@@ -1,0 +1,27 @@
+{
+  "name": "react-native-resumable",
+  "version": "1.0.1",
+  "description": "Make resumable.js support React-Native. A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads.",
+  "main": "resumable.js",
+  "types": "./resumable.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tong233/react-native-resumable.git"
+  },
+  "keywords": [
+    "file",
+    "upload",
+    "chunk upload",
+    "react native",
+    "RN"
+  ],
+  "author": "https://github.com/tong233/react-native-resumable",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tong233/react-native-resumable/issues"
+  },
+  "homepage": "https://github.com/tong233/react-native-resumable#readme"
+}
