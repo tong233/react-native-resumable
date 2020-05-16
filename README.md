@@ -63,6 +63,8 @@ r.upload()
 ### Resumable
 #### Configuration
 
+[doc](http://www.resumablejs.com)
+
 The object is loaded with a configuration hash:
 
 ```js
