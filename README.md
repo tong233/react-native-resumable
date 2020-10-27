@@ -32,8 +32,9 @@ A new `Resumable` object is created with information of what and where to post:
 import Resumable from "react-native-resumable";
 
 var r = new Resumable({
-  target:'/api/photo/redeem-upload-token',
-  query:{upload_token:'my_token'}
+  target:'/api/upload',
+  allowDuplicateUploads: true,
+  method: 'octet'
 });
 
 ```
@@ -42,19 +43,25 @@ After this, interaction with Resumable.js is done by listening to events:
 
 ```js
 r.on('fileAdded', function(file, event){
-    ...
+    console.log('fileAdded')
+  });
+r.on('fileProgress', function(file, message){
+    console.log(file.progress())
   });
 r.on('fileSuccess', function(file, message){
-    ...
+    console.log(message)
   });
 r.on('fileError', function(file, message){
-    ...
+    console.log(message)
+    file.close() // close blob destroy memory
   });
 
-// get Blob for example via react-native-syan-image-picker react-native-document-picker
-r.addFile(Blob)
-
-r.upload()
+// get native file for example via react-native-syan-image-picker react-native-document-picker
+fetch(file.uri).then(res => {
+    const blob = res.blob(); // convert native file to blob
+    r.addFile(blob)
+    r.upload()
+})
 
 ```
 
